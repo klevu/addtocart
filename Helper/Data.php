@@ -11,7 +11,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function __construct(\Magento\Framework\App\Config\ScopeConfigInterface $appConfigScopeConfigInterface)
     {
         $this->_appConfigScopeConfigInterface = $appConfigScopeConfigInterface;
-
     }
 
     const XML_PATH_ADDTOCART_ENABLED = "klevu_search/add_to_cart/enabledaddtocartfront";
@@ -23,8 +22,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      *
      * @return bool
      */
-    public function isAddtocartEnabled($store_id = null) {
-        return $this->_appConfigScopeConfigInterface->isSetFlag(static::XML_PATH_ADDTOCART_ENABLED,\Magento\Store\Model\ScopeInterface::SCOPE_STORE,$store_id);
+    public function isAddtocartEnabled($store_id = null)
+    {
+        return $this->_appConfigScopeConfigInterface->isSetFlag(static::XML_PATH_ADDTOCART_ENABLED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $store_id);
     }
 }
-	 
