@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Config/etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
   <system>
     <section id="klevu_search" translate="label">
       <group id="add_to_cart" translate="label" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -7,7 +7,7 @@
         <field id="enabled_info" translate="label comment" sortOrder="100" type="label" showInDefault="1" showInWebsite="1">
           <comment><![CDATA[Switch to store view scope to set.]]></comment>
         </field>
-        <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInStore="1">
+        <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInDefault="1" showInStore="1">
           <label>Show Add To Cart Button</label>
 			<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
           <comment><![CDATA[If enabled, the Add To Cart button is displayed for every product in
