@@ -1,5 +1,4 @@
-<?php $config = \Magento\Framework\App\ObjectManager::getInstance()->get('Klevu\Addtocart\Helper\Data'); ?>
-<?php if ($config->isAddtocartEnabled()) {?>
+<?php if ($block->isAddtocartEnabled()):?>
 <script type="text/javascript">
     function klevu_addtocart(id,url,qty) {
             var el = document.createElement("a");         
@@ -11,4 +10,4 @@
             document.body.removeChild(el);          
     }
 </script>
-<?php } ?>
+<?php endif; ?>
