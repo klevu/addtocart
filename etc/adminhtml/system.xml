@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
   <system>
     <section id="klevu_search" translate="label">
       <group id="add_to_cart" translate="label" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -9,9 +10,11 @@
         </field>
         <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInDefault="1" showInStore="1">
           <label>Show Add To Cart Button</label>
-			<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-          <comment><![CDATA[If enabled, the Add To Cart button is displayed for every product in
-           the Klevu Search results.]]></comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+          <comment><![CDATA[If enabled, the Add To Cart button is displayed for every product in the Klevu Search results.<br />
+If you are using JSv2 JS Theme, this option will determine whether an "add to cart" function is added to your frontend, which will be
+triggered when add to cart is clicked. To control whether or not "add to cart button" itself should appear, please log in to the
+<a href="https://box.klevu.com" target="_blank">Klevu Merchant Centre</a>.]]></comment>
         </field>
       </group>
     </section>
