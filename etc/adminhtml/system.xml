@@ -8,7 +8,7 @@
         <field id="enabled_info" translate="label comment" sortOrder="100" type="label" showInDefault="1" showInWebsite="1">
           <comment><![CDATA[Switch to Store View scope to manage.]]></comment>
         </field>
-        <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInDefault="1" showInStore="1">
+        <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInDefault="0" showInWebsite="0" showInStore="1">
           <label>Show Add To Cart Button</label>
           <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
           <comment><![CDATA[If enabled, the Add To Cart button is displayed for every product in the Klevu Search results.<br />
