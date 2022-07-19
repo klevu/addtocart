@@ -8,7 +8,7 @@
 		"magento/module-backend": "@stable",
 		"magento/module-eav": "@stable",
 		"magento/framework": "@stable",
-        "klevu/module-productsearch": "2.7.1"
+        "klevu/module-productsearch": "@2.7.0"
     },
     "type": "magento-module",
     "version": "2.7.1",
