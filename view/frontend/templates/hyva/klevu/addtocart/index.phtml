@@ -1,0 +1,50 @@
+<?php /** @var $block \Klevu\Addtocart\Block\Index */ ?>
+
+<?php if ($block->isAddtocartEnabled()): ?>
+    <script type="text/javascript">
+        function klevu_addtocart(id, url, qty) {
+            let form = document.createElement("form");
+            form.setAttribute('method', "post");
+            form.setAttribute('action', "<?= $block->escapeUrl($block->getUrl('checkout/cart/add')) ?>");
+
+            let formKey = document.createElement("input"); //input element form_key, hidden
+            formKey.setAttribute('type', "hidden");
+            formKey.setAttribute('name', "form_key");
+            formKey.setAttribute('value', getCookie('form_key'));
+
+            let productId = document.createElement("input"); //input element product, hidden
+            productId.setAttribute('type', "hidden");
+            productId.setAttribute('name', "product");
+            productId.setAttribute('value', id);
+
+            let quantity = document.createElement("input"); //input element qty, hidden
+            quantity.setAttribute('type', "hidden");
+            quantity.setAttribute('name', "qty");
+            quantity.setAttribute('value', qty);
+
+            form.appendChild(formKey);
+            form.appendChild(productId);
+            form.appendChild(quantity);
+
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+        }
+
+        // get cookie value
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+<?php endif; ?>
