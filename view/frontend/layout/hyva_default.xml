@@ -4,7 +4,7 @@
     <body>
         <referenceBlock name="before.body.end">
             <block class="Klevu\Addtocart\Block\Index"
-                   template="Klevu_Addtocart::klevu/addtocart/index.phtml"
+                   template="Klevu_Addtocart::hyva/klevu/addtocart/index.phtml"
                    name="klevu.addtocart.index"/>
         </referenceBlock>
     </body>
