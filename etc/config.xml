@@ -3,7 +3,7 @@
    <default>
       <klevu_search>
          <add_to_cart>
-            <enabled>0</enabled>
+            <enabled>1</enabled>
          </add_to_cart>
       </klevu_search>
    </default>
