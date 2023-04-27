@@ -1,7 +1,4 @@
 <?php
-/**
- * Klevu addtocart block
- */
 
 namespace Klevu\Addtocart\Block;
 
@@ -9,14 +6,14 @@ use Klevu\Addtocart\Helper\Data as Klevu_AddtocartHelper;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
-/**
- * Class Index
- * @package Klevu\Addtocart\Block
- */
 class Index extends Template
 {
     /**
-     * Index constructor.
+     * @var Klevu_AddtocartHelper
+     */
+    protected $_addtocartHelperData;
+
+    /**
      * @param Context $context
      * @param Klevu_AddtocartHelper $addtocartHelperData
      * @param array $data
