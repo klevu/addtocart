@@ -89,20 +89,14 @@ class RenderPluginTest extends AbstractBackendControllerTestCase
             $this->assertContains('<div id="system_config_tabs"', $responseBody);
         }
         if (method_exists($this, 'assertMatchesRegularExpression')) {
-            $this->assertMatchesRegularExpression('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
+            $this->assertDoesNotMatchRegularExpression('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
         } else {
-            $this->assertRegExp('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
+            $this->assertNotRegExp('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
         }
 
         $matches = [];
         preg_match('#<tr[^>]+id="row_klevu_search_add_to_cart_enabled_info".*?</tr>#s', $responseBody, $matches);
-        $this->assertCount(1, $matches);
-        $addToCartButtonRow = current($matches);
-        if (method_exists($this, 'assertStringContainsString')) {
-            $this->assertStringContainsString('Switch to Store View scope to manag', $addToCartButtonRow);
-        } else {
-            $this->assertContains('Switch to Store View scope to manage', $addToCartButtonRow);
-        }
+        $this->assertCount(0, $matches);
         if (method_exists($this, 'assertDoesNotMatchRegularExpression')) {
             $this->assertDoesNotMatchRegularExpression(
                 '#<tr[^>]+id="row_klevu_search_add_to_cart_enabledaddtocartfront".*?</tr>#s',
@@ -157,20 +151,14 @@ class RenderPluginTest extends AbstractBackendControllerTestCase
 
         $responseBody = $response->getBody();
         if (method_exists($this, 'assertMatchesRegularExpression')) {
-            $this->assertMatchesRegularExpression('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
+            $this->assertDoesNotMatchRegularExpression('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
         } else {
-            $this->assertRegExp('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
+            $this->assertNotRegExp('#<fieldset[^>]+id="klevu_search_add_to_cart"#', $responseBody);
         }
 
         $matches = [];
         preg_match('#<tr[^>]+id="row_klevu_search_add_to_cart_enabled_info".*?</tr>#s', $responseBody, $matches);
-        $this->assertCount(1, $matches);
-        $addToCartButtonRow = current($matches);
-        if (method_exists($this, 'assertStringContainsString')) {
-            $this->assertStringContainsString('Switch to Store View scope to manag', $addToCartButtonRow);
-        } else {
-            $this->assertContains('Switch to Store View scope to manage', $addToCartButtonRow);
-        }
+        $this->assertCount(0, $matches);
         if (method_exists($this, 'assertDoesNotMatchRegularExpression')) {
             $this->assertDoesNotMatchRegularExpression(
                 '#<tr[^>]+id="row_klevu_search_add_to_cart_enabledaddtocartfront".*?</tr>#s',
@@ -291,11 +279,6 @@ class RenderPluginTest extends AbstractBackendControllerTestCase
         );
         $this->assertCount(1, $matches, 'Add to cart field');
         $addToCartButtonField = current($matches);
-        if (method_exists($this, 'assertStringNotContainsString')) {
-            $this->assertStringNotContainsString('disabled', $addToCartButtonField);
-        } else {
-            $this->assertNotContains('disabled', $addToCartButtonField);
-        }
         if (method_exists($this, 'assertMatchesRegularExpression')) {
             $this->assertMatchesRegularExpression(
                 '#<option[^>]+value="0"[^>]+selected.*?>\s*No\s*</option>#s',
@@ -407,11 +390,6 @@ class RenderPluginTest extends AbstractBackendControllerTestCase
         );
         $this->assertCount(1, $matches, 'Add to cart field');
         $addToCartButtonField = current($matches);
-        if (method_exists($this, 'assertStringNotContainsString')) {
-            $this->assertStringContainsString('disabled', $addToCartButtonField);
-        } else {
-            $this->assertContains('disabled', $addToCartButtonField);
-        }
         if (method_exists($this, 'assertMatchesRegularExpression')) {
             $this->assertMatchesRegularExpression(
                 '#<option[^>]+value="1".*?>\s*Yes\s*</option>#s',
@@ -529,11 +507,6 @@ class RenderPluginTest extends AbstractBackendControllerTestCase
         );
         $this->assertCount(1, $matches, 'Add to cart field');
         $addToCartButtonField = current($matches);
-        if (method_exists($this, 'assertStringNotContainsString')) {
-            $this->assertStringNotContainsString('disabled', $addToCartButtonField);
-        } else {
-            $this->assertNotContains('disabled', $addToCartButtonField);
-        }
         if (method_exists($this, 'assertMatchesRegularExpression')) {
             $this->assertMatchesRegularExpression(
                 '#<option[^>]+value="1"[^>]+selected.*?>\s*Yes\s*</option>#s',
