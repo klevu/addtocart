@@ -3,12 +3,17 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
   <system>
     <section id="klevu_search" translate="label">
-      <group id="add_to_cart" translate="label" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="1">
+      <group id="add_to_cart_info" translate="label" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="0">
+          <label>Add To Cart Button</label>
+          <field id="enabled_info" translate="label comment" sortOrder="100" type="label" showInDefault="1" showInWebsite="1">
+              <comment><![CDATA[Switch to Store View scope to manage.]]></comment>
+          </field>
+          <hide_in_single_store_mode>1</hide_in_single_store_mode>
+      </group>
+
+      <group id="add_to_cart" translate="label" sortOrder="104" showInDefault="0" showInWebsite="0" showInStore="1">
         <label>Add To Cart Button</label>
-        <field id="enabled_info" translate="label comment" sortOrder="100" type="label" showInDefault="1" showInWebsite="1">
-          <comment><![CDATA[Switch to Store View scope to manage.]]></comment>
-        </field>
-        <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInDefault="0" showInWebsite="0" showInStore="1">
+        <field id="enabledaddtocartfront" translate="label" sortOrder="100" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
           <label>Show Add To Cart Button</label>
           <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
           <comment><![CDATA[If enabled, the Add To Cart button is displayed for every product in the Klevu Search results.<br />
